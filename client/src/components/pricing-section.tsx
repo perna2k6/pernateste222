@@ -24,7 +24,7 @@ export default function PricingSection() {
 
               <div className="mb-6">
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-2xl font-bold line-through text-muted-foreground">R$ 47,00</span>
+                  <span className="text-2xl font-bold line-through text-red-600">R$ 47,00</span>
                   <span className="bg-destructive text-destructive-foreground px-2 py-1 rounded text-sm font-bold">-79%</span>
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">R$ 10,00</div>
@@ -76,7 +76,7 @@ export default function PricingSection() {
 
               <div className="mb-6">
                 <div className="flex items-baseline gap-2 mb-2">
-                  <span className="text-lg font-medium text-muted-foreground">De R$ 189,00</span>
+                  <span className="text-lg font-medium line-through text-red-600">De R$ 189,00</span>
                   <span className="bg-destructive text-destructive-foreground px-2 py-1 rounded text-sm font-bold">-91%</span>
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">R$ 17,00</div>

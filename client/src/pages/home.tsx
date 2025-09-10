@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import SocialProof from "@/components/social-proof";
 import HeroSection from "@/components/hero-section";
 import BooksCarousel from "@/components/books-carousel";
@@ -6,10 +5,8 @@ import TestimonialsCarousel from "@/components/testimonials-carousel";
 import CountdownTimer from "@/components/countdown-timer";
 import PricingSection from "@/components/pricing-section";
 import FAQSection from "@/components/faq-section";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Home() {
-  const isMobile = useIsMobile();
 
   const scrollToOffers = () => {
     const element = document.getElementById('pacotes');
@@ -73,19 +70,6 @@ export default function Home() {
       <CountdownTimer />
       <PricingSection />
       <FAQSection />
-
-      {/* Sticky CTA for Mobile */}
-      {isMobile && (
-        <div className="fixed bottom-0 left-0 right-0 p-4 bg-background border-t border-border z-40">
-          <button 
-            onClick={scrollToOffers}
-            className="block w-full bg-accent text-accent-foreground text-center py-3 px-6 rounded-lg font-bold shadow-lg"
-            data-testid="button-sticky-offers"
-          >
-            VER OFERTAS ESPECIAIS
-          </button>
-        </div>
-      )}
     </div>
   );
 }
