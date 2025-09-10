@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import LazyImage from "./lazy-image";
 
 const books = [
   {
@@ -108,7 +109,7 @@ export default function BooksCarousel() {
             {books.map((book) => (
               <div key={book.id} className="flex-shrink-0 w-48 md:w-56 snap-center">
                 <div className="bg-card rounded-lg shadow-lg overflow-hidden">
-                  <img 
+                  <LazyImage
                     src={book.image}
                     alt={book.title}
                     className="w-full h-48 md:h-56 object-cover"

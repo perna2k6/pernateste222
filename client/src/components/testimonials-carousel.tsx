@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import LazyImage from "./lazy-image";
 
 const testimonials = [
   {
@@ -78,7 +79,7 @@ export default function TestimonialsCarousel() {
           >
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="flex-shrink-0 w-48 md:w-56 snap-center">
-                <img 
+                <LazyImage
                   src={testimonial.image}
                   alt="Depoimento de cliente"
                   className="w-full h-auto rounded-lg shadow-lg"
