@@ -11,7 +11,10 @@ const STATIC_ASSETS = [
   '/src/index.css',
   '/manifest.json',
   // Add key static assets that should be cached
-  'https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap'
+  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap',
+  'https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfMZ.woff2',
+  // Critical images for mobile performance
+  'https://dainty-pegasus-e6b860.netlify.app/assets/produto-capa-DqWeTLcW.png'
 ];
 
 // Install event - cache static assets
@@ -115,11 +118,12 @@ async function handleFetchRequest(request) {
 // Check if request is for a static asset
 function isStaticAsset(request) {
   const url = new URL(request.url);
-  const staticExtensions = ['.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.woff', '.woff2'];
+  const staticExtensions = ['.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.woff', '.woff2', '.webp'];
   
   return staticExtensions.some(ext => url.pathname.endsWith(ext)) ||
          url.origin.includes('fonts.googleapis.com') ||
-         url.origin.includes('fonts.gstatic.com');
+         url.origin.includes('fonts.gstatic.com') ||
+         url.origin.includes('dainty-pegasus-e6b860.netlify.app');
 }
 
 // Cache First strategy - try cache first, fallback to network

@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import LazyImage from "./lazy-image";
+import { useAnalyticsClick } from "@/hooks/use-analytics";
+import { EventNames } from "@shared/schema";
 
 const testimonials = [
   {
@@ -39,14 +41,17 @@ const testimonials = [
 
 export default function TestimonialsCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const trackClick = useAnalyticsClick();
 
   const scrollLeft = () => {
+    trackClick(EventNames.TESTIMONIALS_CAROUSEL_PREV, 'testimonials-carousel-prev-button');
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
+    trackClick(EventNames.TESTIMONIALS_CAROUSEL_NEXT, 'testimonials-carousel-next-button');
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
     }

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useAnalyticsClick } from "@/hooks/use-analytics";
+import { EventNames } from "@shared/schema";
 
 const faqs = [
   {
@@ -26,8 +28,15 @@ const faqs = [
 
 export default function FAQSection() {
   const [openItems, setOpenItems] = useState<number[]>([]);
+  const trackClick = useAnalyticsClick();
 
   const toggleItem = (id: number) => {
+    const isOpening = !openItems.includes(id);
+    trackClick(EventNames.FAQ_TOGGLE, `faq-toggle-${id}`, { 
+      faqId: id, 
+      action: isOpening ? 'open' : 'close'
+    });
+    
     setOpenItems(prev => 
       prev.includes(id) 
         ? prev.filter(item => item !== id)

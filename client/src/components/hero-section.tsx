@@ -1,7 +1,13 @@
 import { Shield } from "lucide-react";
+import { useAnalyticsClick } from "@/hooks/use-analytics";
+import { EventNames } from "@shared/schema";
+import LazyImage from "./lazy-image";
 
 export default function HeroSection() {
+  const trackClick = useAnalyticsClick();
+  
   const scrollToOffers = () => {
+    trackClick(EventNames.HERO_CTA, 'hero-cta-button');
     const element = document.getElementById('pacotes');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -22,10 +28,14 @@ export default function HeroSection() {
           <div className="text-center text-white">
             {/* Main Product Image */}
             <div className="mb-8 flex justify-center">
-              <img 
+              <LazyImage
                 src="https://dainty-pegasus-e6b860.netlify.app/assets/produto-capa-DqWeTLcW.png" 
                 alt="Passinhos de Luz - Coleção de Livros Infantis" 
                 className="w-64 h-auto md:w-80 drop-shadow-2xl"
+                priority={true}
+                width={320}
+                height={400}
+                sizes="(max-width: 768px) 256px, 320px"
                 data-testid="hero-product-image"
               />
             </div>

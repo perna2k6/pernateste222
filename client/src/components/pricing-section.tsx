@@ -1,6 +1,45 @@
 import { Star, Sparkles, Gift, Crown, Check } from "lucide-react";
+import { useAnalyticsConversion } from "@/hooks/use-analytics";
+import { EventNames } from "@shared/schema";
 
 export default function PricingSection() {
+  const trackConversion = useAnalyticsConversion();
+
+  const handleBasicPackageClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // Track conversion with reliable method
+    try {
+      await trackConversion(EventNames.BASIC_PACKAGE, 'basic-package-button', {
+        package: 'basic',
+        price: 10,
+        url: 'https://pay.cakto.com.br/6citxc2_524924'
+      });
+    } catch (error) {
+      console.warn('Conversion tracking failed:', error);
+    }
+    
+    // Open payment page in new tab
+    window.open('https://pay.cakto.com.br/6citxc2_524924', '_blank', 'noopener,noreferrer');
+  };
+
+  const handlePremiumPackageClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // Track conversion with reliable method
+    try {
+      await trackConversion(EventNames.PREMIUM_PACKAGE, 'premium-package-button', {
+        package: 'premium',
+        price: 17,
+        url: 'https://pay.cakto.com.br/nfwqwkt_481417'
+      });
+    } catch (error) {
+      console.warn('Conversion tracking failed:', error);
+    }
+    
+    // Open payment page in new tab
+    window.open('https://pay.cakto.com.br/nfwqwkt_481417', '_blank', 'noopener,noreferrer');
+  };
   return (
     <section id="pacotes" className="py-12 md:py-16 bg-muted">
       <div className="container mx-auto px-4">
@@ -56,6 +95,9 @@ export default function PricingSection() {
 
               <a 
                 href="https://pay.cakto.com.br/6citxc2_524924"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleBasicPackageClick}
                 className="block w-full bg-primary text-primary-foreground text-center py-3 px-6 rounded-lg font-bold shadow-lg transform transition hover:scale-105 hover:shadow-xl"
                 data-testid="button-basic-package"
               >
@@ -124,6 +166,9 @@ export default function PricingSection() {
 
               <a 
                 href="https://pay.cakto.com.br/nfwqwkt_481417"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handlePremiumPackageClick}
                 className="block w-full bg-accent text-accent-foreground text-center py-3 px-6 rounded-lg font-bold shadow-lg transform transition hover:scale-105 hover:shadow-xl"
                 data-testid="button-premium-package"
               >

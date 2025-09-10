@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import LazyImage from "./lazy-image";
+import { useAnalyticsClick } from "@/hooks/use-analytics";
+import { EventNames } from "@shared/schema";
 
 const books = [
   {
@@ -67,8 +69,10 @@ const books = [
 
 export default function BooksCarousel() {
   const carouselRef = useRef<HTMLDivElement>(null);
+  const trackClick = useAnalyticsClick();
 
   const scrollToOffers = () => {
+    trackClick(EventNames.COLLECTION_CTA, 'collection-cta-button');
     const element = document.getElementById('pacotes');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -76,12 +80,14 @@ export default function BooksCarousel() {
   };
 
   const scrollLeft = () => {
+    trackClick(EventNames.BOOKS_CAROUSEL_PREV, 'books-carousel-prev-button');
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: -200, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
+    trackClick(EventNames.BOOKS_CAROUSEL_NEXT, 'books-carousel-next-button');
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left: 200, behavior: 'smooth' });
     }
