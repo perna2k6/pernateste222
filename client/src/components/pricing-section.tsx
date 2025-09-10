@@ -98,7 +98,7 @@ export default function PricingSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleBasicPackageClick}
-                className="block w-full bg-primary text-primary-foreground text-center py-3 px-6 rounded-lg font-bold shadow-lg transform transition hover:scale-105 hover:shadow-xl"
+                className="block w-full bg-gradient-to-r from-primary to-blue-600 text-primary-foreground text-center py-4 px-8 rounded-3xl font-bold text-lg shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:from-blue-600 hover:to-primary"
                 data-testid="button-basic-package"
               >
                 QUERO O PACOTE BÁSICO
@@ -169,7 +169,7 @@ export default function PricingSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handlePremiumPackageClick}
-                className="block w-full bg-accent text-accent-foreground text-center py-3 px-6 rounded-lg font-bold shadow-lg transform transition hover:scale-105 hover:shadow-xl"
+                className="block w-full bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-4 px-8 rounded-3xl font-bold text-lg shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:from-red-500 hover:to-orange-500 animate-pulse"
                 data-testid="button-premium-package"
               >
                 QUERO O PACOTE PREMIUM

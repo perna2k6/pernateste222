@@ -52,7 +52,7 @@ export default function HeroSection() {
 
             <button 
               onClick={scrollToOffers}
-              className="inline-block bg-accent text-accent-foreground px-8 py-4 rounded-lg font-bold text-lg shadow-lg transform transition hover:scale-105 hover:shadow-xl"
+              className="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-10 py-5 rounded-3xl font-bold text-xl shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:from-emerald-600 hover:to-green-500"
               data-testid="button-hero-offers"
             >
               QUERO VER AS OFERTAS

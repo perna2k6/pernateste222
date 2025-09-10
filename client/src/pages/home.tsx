@@ -60,7 +60,7 @@ export default function Home() {
           <div className="text-center mt-8">
             <button 
               onClick={scrollToOffers}
-              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-lg font-bold shadow-lg transform transition hover:scale-105"
+              className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-3xl font-bold text-lg shadow-2xl transform transition-all duration-300 hover:scale-110 hover:shadow-3xl hover:from-purple-600 hover:to-blue-600"
               data-testid="button-why-choose-offers"
             >
               QUERO VER AS OFERTAS
