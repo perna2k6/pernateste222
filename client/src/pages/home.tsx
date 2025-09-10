@@ -5,14 +5,11 @@ import TestimonialsCarousel from "@/components/testimonials-carousel";
 import CountdownTimer from "@/components/countdown-timer";
 import PricingSection from "@/components/pricing-section";
 import FAQSection from "@/components/faq-section";
-import PerformanceDashboard from "@/components/performance-dashboard";
 import { useAnalyticsClick } from "@/hooks/use-analytics";
 import { EventNames } from "@shared/schema";
-import { useState } from "react";
 
 export default function Home() {
   const trackClick = useAnalyticsClick();
-  const [showPerformanceDashboard, setShowPerformanceDashboard] = useState(false);
 
   const scrollToOffers = () => {
     trackClick(EventNames.WHY_CHOOSE_CTA, 'why-choose-cta-button');
@@ -77,36 +74,6 @@ export default function Home() {
       <CountdownTimer />
       <PricingSection />
       <FAQSection />
-      
-      {/* Performance Dashboard Toggle */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <button
-          onClick={() => setShowPerformanceDashboard(!showPerformanceDashboard)}
-          className="bg-primary text-primary-foreground px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all text-sm font-medium"
-          data-testid="button-performance-toggle"
-          title="Toggle Performance Dashboard"
-        >
-          📊 Performance
-        </button>
-      </div>
-
-      {/* Performance Dashboard Overlay */}
-      {showPerformanceDashboard && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 p-4 overflow-auto">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex justify-end mb-4">
-              <button
-                onClick={() => setShowPerformanceDashboard(false)}
-                className="bg-white text-black px-3 py-1 rounded hover:bg-gray-100 transition-colors"
-                data-testid="button-performance-close"
-              >
-                ✕ Fechar
-              </button>
-            </div>
-            <PerformanceDashboard />
-          </div>
-        </div>
-      )}
     </div>
   );
 }
