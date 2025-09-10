@@ -77,7 +77,7 @@ export default function TestimonialsCarousel() {
             data-testid="testimonials-carousel"
           >
             {testimonials.map((testimonial) => (
-              <div key={testimonial.id} className="testimonial-card flex-shrink-0 snap-center">
+              <div key={testimonial.id} className="flex-shrink-0 w-48 md:w-56 snap-center">
                 <img 
                   src={testimonial.image}
                   alt="Depoimento de cliente"
