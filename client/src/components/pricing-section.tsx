@@ -133,29 +133,29 @@ export default function PricingSection() {
                 <li className="flex items-start gap-2">
                   <Gift className="text-accent mt-1 w-4 h-4" />
                   <div className="text-sm">
-                    <strong>BÔNUS <span className="text-red-600 line-through">1</span>:</strong> Guia de Atividades para Datas Comemorativas Cristãs
-                    <div className="text-xs text-muted-foreground">R$29,90</div>
+                    <strong>BÔNUS 1:</strong> Guia de Atividades para Datas Comemorativas Cristãs
+                    <div className="text-xs text-red-600 line-through">R$29,90</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <Gift className="text-accent mt-1 w-4 h-4" />
                   <div className="text-sm">
-                    <strong>BÔNUS <span className="text-red-600 line-through">2</span>:</strong> Livro de Colorir Estilo Bobbie Goods
-                    <div className="text-xs text-muted-foreground">R$24,90</div>
+                    <strong>BÔNUS 2:</strong> Livro de Colorir Estilo Bobbie Goods
+                    <div className="text-xs text-red-600 line-through">R$24,90</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <Gift className="text-accent mt-1 w-4 h-4" />
                   <div className="text-sm">
-                    <strong>BÔNUS <span className="text-red-600 line-through">3</span>:</strong> Jogo de Tabuleiro "Ajudando Noé"
-                    <div className="text-xs text-muted-foreground">R$34,90</div>
+                    <strong>BÔNUS 3:</strong> Jogo de Tabuleiro "Ajudando Noé"
+                    <div className="text-xs text-red-600 line-through">R$34,90</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <Gift className="text-accent mt-1 w-4 h-4" />
                   <div className="text-sm">
-                    <strong>BÔNUS <span className="text-red-600 line-through">4</span>:</strong> Calendário Montável Cristão Infantil
-                    <div className="text-xs text-muted-foreground">R$19,90</div>
+                    <strong>BÔNUS 4:</strong> Calendário Montável Cristão Infantil
+                    <div className="text-xs text-red-600 line-through">R$19,90</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
