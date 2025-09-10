@@ -67,8 +67,8 @@ export default function PricingSection() {
           {/* Premium Package */}
           <div className="bg-card rounded-xl shadow-xl border-2 border-primary overflow-hidden relative">
             {/* Popular Badge */}
-            <div className="absolute top-0 left-0 right-0 bg-primary text-primary-foreground text-center py-2 font-bold text-sm">
-              🏆 MAIS VENDIDO
+            <div className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-400 to-orange-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+              ⭐ MAIS VENDIDO
             </div>
 
             <div className="p-6 pt-12">
